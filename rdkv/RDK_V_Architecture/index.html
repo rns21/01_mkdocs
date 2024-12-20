@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Architecture - RDK Documentation</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">RDK Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">RDK-V</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Architecture</a>
+</li>
+                                    
+<li>
+    <a href="../RDK_V_TryOutRDK/" class="dropdown-item">Contributing</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">RDK-B</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" class="nav-link disabled">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../RDK_V_TryOutRDK/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                              <button id="theme-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme" class="nav-link dropdown-toggle">
+                                <i class="fa-solid fa-circle-half-stroke fa-fw"></i>
+                                <span class="d-lg-none ms-2">Toggle theme</span>
+                              </button>
+                              <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="true">
+                                    <i class="fa-solid fa-sun fa-fw"></i>
+                                    <span class="ms-2">Light</span>
+                                    <i class="fa-solid fa-check ms-auto"></i>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                                    <i class="fa-solid fa-moon fa-fw"></i>
+                                    <span class="ms-2">Dark</span>
+                                    <i class="fa-solid fa-check ms-auto d-none"></i>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="false">
+                                    <i class="fa-solid fa-circle-half-stroke fa-fw"></i>
+                                    <span class="ms-2">Auto</span>
+                                    <i class="fa-solid fa-check ms-auto d-none"></i>
+                                  </button>
+                                </li>
+                              </ul>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script src="../../js/darkmode.js"></script>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="2"><a href="#evolution-of-rdk" class="nav-link">Evolution of RDK</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#architecture-details" class="nav-link">Architecture Details</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#application-scenario" class="nav-link">Application Scenario</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#useful-links" class="nav-link">Useful Links</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1>Architecture</h1>
+<p>RDK Video (RDK-V) Architecture is designed to enable service providers and device manufacturers to develop and deploy innovative video applications, services, and user experiences. It consists of several key components that work together seamlessly to provide a robust video platform.</p>
+<p>By leveraging the pluggable architecture of RDK-V, a variety of target device profiles can be supported, ranging from a basic IP streaming  video platform to a full-fledged TV.</p>
+<ul>
+<li>
+<p><a href="https://wiki.rdkcentral.com/display/RDK/IP">IP</a> provides a common method to manage video playback functions. The IP client device serves as an interface and receives video content from an in-home gateway device or from an external media server.</p>
+</li>
+<li>
+<p><a href="https://wiki.rdkcentral.com/display/RDK/Hybrid">Hybrid</a> is an IP video platform device with capabilities such as tuning and conditional access for its video delivery to manage hybrid video functions.</p>
+</li>
+<li>
+<p><a href="https://wiki.rdkcentral.com/display/RDK/TV">TV</a> is an open-source smart TV profile that allows manufacturers and operations to build RDK-based TV and video solutions.</p>
+</li>
+<li>
+<p>RDK Hybrid TV is a combination of <a href="https://wiki.rdkcentral.com/display/RDK/TV">TV</a> plus <a href="https://wiki.rdkcentral.com/display/RDK/Hybrid">Hybrid</a> capabilities</p>
+</li>
+</ul>
+<h2 id="evolution-of-rdk">Evolution of RDK</h2>
+<p>From RDK6, RDK-V shifted from quarterly to annual release cycles. This annual RDK release aims to synchronize RDK-V with standard industry release practices while comprehensively addressing shared challenges within the community. This approach facilitates the smoother and more consistent adoption of newly contributed features, utilizing the latest releases from technology partners. By aligning with SoC partners, the release enables better resource planning to support core RDK-V platforms. Furthermore, the RDK-V release aligns with SoC, OEM, and app releases,
+fostering a more cohesive and efficient ecosystem.</p>
+<p>The first annual release is RDK6, and its release notes can be accessed from <a href="https://wiki.rdkcentral.com/display/RDK/RDK6+Release+Notes">here</a></p>
+<p><img alt="RDK Evolution!" src="../rdkv_architecture_evolution.png" /></p>
+<h2 id="architecture-details">Architecture Details</h2>
+<p>Below is an illustrative representation of the RDK-V software stack, depicting the various components and their interactions.</p>
+<p><img alt="Architecture!" src="../rdkv_architecture_architecture.png" /></p>
+<p>At its core, RDK-V consists of five main stack levels, each serving a specific purpose in the overall architecture. These levels are as follows:</p>
+<h3>Applications</h3>
+<p>The application layer primarily focuses on the end-user experience. This layer contains applications that provide various services, content, and features to the users. While the RDK-V ecosystem is continuously evolving, supported applications typically include popular <strong>OTT services</strong> like Netflix, Amazon Prime Video, and YouTube, alongside native broadcaster applications and other services.</p>
+<h3>Application Platform</h3>
+
+<p>The Application Platform Layer in the RDK-V ecosystem offers essential tools for developers to create applications. It includes components like a UI framework, HTML5 rendering engine, and a JavaScript runtime. This layer acts as a communication channel, serving as a middleware between applications and core RDK-V services. In the RDK-V framework, <a href="https://rdkcentral.github.io/firebolt/apis/latest/">Firebolt®</a> handles UI rendering and user input, enabling extensive customization. <a href="https://lightningjs.io/docs/#/what-is-lightning/index">Lightning™</a>, an open-source JavaScript platform, manages the application lifecycle and integrates components using WebGL for rendering. Together, Firebolt® and Lightning™ form a robust foundation for seamless and efficient application development in the RDK-V ecosystem.</p>
+<h4>Firebolt® 1.0 (Ripple)</h4>
+<p>Firebolt® 1.0 (Ripple) streamlines RDK-V app integration with standardized rules. Ripple, its open-source Rust-based Application gateway, facilitates dynamic extensions and serves as a Firebolt® gateway. RDK 6 is Firebolt® 1.0-certified, with a comprehensive test suite for compliance.</p>
+<h4>Security</h4>
+<ul>
+<li>The Application Platform Layer ensures robust security with Dobby-managed containerization , leveraging Linux kernel features for process isolation. Downloadable Application Containers (DAC) enable the secure running of binary applications on video platforms without modification, ensuring compatibility across RDK 6 devices. Access control is enforced through AppArmor, a proactive Linux security system. RDKM's open-sourced AppArmor profile generator tool for RDK 6 provides fine-grained control over process resources, contributing to a secure environment.</li>
+</ul>
+<h3>Middleware</h3>
+
+<p>Serving as a vital bridge between the Application Platform Layer and the hardware (HAL), the RDK Middleware Layer incorporates essential components that are pivotal for the seamless operation of the RDK-V platform. Core to this layer are <em>RDK services</em>, providing JSON-RPC services for interactive applications. In the realm of security, iCrypto handles critical cryptographic operations, ensuring secure communication and data protection. Rialto offers a secure solution for AV pipelines in containerized applications, and the Window Manager orchestrates GUI layout. Device management enables streamlined operations in RDK deployments, including bulk operations and firmware downloads. XCONF integration revolutionizes code downloads for a smoother deployment experience. Log uploads aid in comprehensive debugging, offering insights into system performance. RDK Feature Control (RFC) enables dynamic feature management for enhanced flexibility. Telemetry systematically collects essential data insights, while WebPA ensures secure communication between cloud servers and RDK devices. The Media Player, crucial for local rendering devices, manages various pipeline functions, supporting IP and QAM playback. The Open Content Decryption Module(OCDM) enforces Digital Rights Management (DRM) policies. Together with other RDK-V elements, these components ensure the efficient and secure functioning of the RDK-V platform.</p>
+<h3>HAL (Hardware Abstraction Layer)</h3>
+
+<p>In the RDK-V stack, the HAL layer plays a vital role in facilitating communication between the video application software and hardware components like the GPU, video encoding/decoding hardware, and audio devices. It provides a standardized framework for functions, data structures, and protocols, enabling efficient hardware resource utilization. The HAL layer manages hardware initialization, input/output operations, and hardware-specific events, shielding software developers from hardware complexities and allowing them to prioritize user experience and functionality.</p>
+<p>RDK-V provides a set of HAL APIs that abstract the platform from RDK. Vendors need to implement the HAL APIs to meet the HAL specifications. With the help of the HAL API specification for different RDK-V components, vendors can successfully port RDK-V to their platform. Depending on the device profile ( <a href="https://wiki.rdkcentral.com/display/RDK/IP">IP</a>, <a href="https://wiki.rdkcentral.com/display/RDK/Hybrid">Hybrid</a>, <a href="https://wiki.rdkcentral.com/display/RDK/TV">TV</a>  etc.), vendors may choose the relevant components and perform the port by implementing the HAL layer. For more details on the vendor porting process, refer to the <a href="https://wiki.rdkcentral.com/display/RDK/Vendor+Porting+Guide">Vendor Porting Guide</a></p>
+<h3>SOC</h3>
+
+<p>The System on Chip (SOC) layer forms the foundational interface between hardware components, ensuring system security and reliability. It incorporates various crucial elements, such as DRM Libraries, which manage digital rights and secure content delivery to prevent unauthorized access and distribution. Trusted Applications (Apps TA) guarantee the secure execution of sensitive operations and protect critical data from unauthorized access. The Secure Store oversees the storage of DRM keys and apps triplets, maintaining the confidentiality and integrity of vital data. Additionally, MFR Libraries manage hardware functionality, providing access to specific hardware features and capabilities, thereby contributing to the overall security and functionality of the system.</p>
+<h2 id="application-scenario">Application Scenario</h2>
+<p>Consider the use case of a user accessing a streaming application like Youtube on an RDK Video-supported device. The user interacts with the application through the Application Layer, selecting content and initiating playback. The Application Platform Layer, utilizing the Firebolt® and Lightning™ frameworks, manages the user interface and application lifecycle. The RDK-V Layer ensures seamless communication between the application and the hardware, managing services, cryptographic operations, inter-component communication, window management, and content decryption through OpenCDM. The RDK HAL Layer then utilizes the Gstreamer media pipeline to decode and render the video content, ensuring a smooth and high-quality viewing experience. Finally, the SOC Layer provides a secure environment for the entire system, safeguarding the hardware, managing DRM policies, and securing sensitive data, ensuring a secure and reliable video streaming experience for the user.</p>
+<h2 id="useful-links">Useful Links</h2>
+<h4>RDK-V</h4>
+
+<p>You can find an overview of the RDK-V platform, detailing its key features and functionalities at <a href="https://wiki.rdkcentral.com/display/RDK/RDK+Video+Documentation">RDK Video Documentation</a></p>
+<h4>Applications</h4>
+
+<p>To get the information about various applications supported by the RDK-V, aiding in understanding the diverse application landscape refer <a href="https://wiki.rdkcentral.com/display/RDK/RDK+Video+Accelerator+-+Applications">RDK Video Accelerator - Applications</a></p>
+<h4>Application Development</h4>
+
+<p>Developers interested in RDK-V application development using Firebolt® can refer <a href="https://rdkcentral.github.io/firebolt/apis/latest/">Firebolt® Overview</a>
+Developers interested in RDK-V application development using Lightning™ - the inhouse JavaScript framework - can refer <a href="https://lightningjs.io/docs/#/what-is-lightning/index">Lightning™ Framework</a></p>
+<h4>Security</h4>
+
+<p>Understanding the concept of containerization in RDK-V is crucial for ensuring secure and efficient application deployment, and the <a href="https://wiki.rdkcentral.com/display/RDK/Containerization+in+RDK">Containerization in RDK</a> document provides in-depth insights into this aspect.</p>
+<p>To learn about the implementation and benefits of Downloadable Application Containers (DAC) within the RDK-V ecosystem, the <a href="https://wiki.rdkcentral.com/pages/viewpage.action?pageId=113967683">DAC Documentation</a> offers comprehensive guidance for developers.</p>
+<p>For insight into the Access Control Mechanism in RDK-V using AppArmor, developers can refer to the <a href="https://wiki.rdkcentral.com/display/RDK/Mandatory+Access+Control+in+RDK+using+AppArmor">AppArmor Documentation</a> to understand how to enforce security policies and restrict application access within the RDK-V environment.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
